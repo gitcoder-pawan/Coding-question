@@ -1,0 +1,28 @@
+//camelCase string printing by extracting the words 
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	string  s;
+	cin>>s;
+	int n = s.size();
+	string temps= "";
+	int curr = 0;
+	while(curr<n){
+	    //check curr val char in string is upper then break or print the temps and assign the curr char  in temps by converting lower case
+	    if(s[curr]>='A' && s[curr]<='Z'){
+	        //print the temps
+	        cout<<temps<<endl;
+	        //assign the curr char in temps by converting lower case
+	        temps = s[curr] + 32;
+	    }
+	    else {
+	        // if curr val is in lower case then simply concat with temps 
+	        temps += (s[curr]-32);
+	    }
+	    //increase the counter as weare using the while loop
+	    curr++;
+	}
+	//if no upper case char came or ( to handle the last word of cameCase string) then simply print the temps
+	cout<<temps<<endl;
+	return 0;
+}
